@@ -9,19 +9,19 @@ $username = $_SESSION["username"];
 if(isset($_SESSION["username"]))
 {
 	// get user info
-	mysql_select_db('v.octop', $db_versivo);
+	mysqli_select_db('v.octop', $db_versivo);
 	$sql_user = "SELECT * FROM `users` WHERE `username` = '".$username."' ORDER BY `id`";
-	$res_user = mysql_query($sql_user, $db_versivo);
-	$out_user = mysql_fetch_array($res_user);
+	$res_user = mysqli_query($sql_user, $db_versivo);
+	$out_user = mysqli_fetch_array($res_user);
 	$user_id = $out_user["id"];
 	$user_level = $out_user["level"];
 	$customer_id = $out_user["customer"];
 
 	// get customer info
-	mysql_select_db('v.octop', $db_versivo);
+	mysqli_select_db('v.octop', $db_versivo);
 	$sql_customer = "SELECT * FROM `customers` WHERE `id` = '".$customer_id."' ORDER BY `id`";
-	$res_customer = mysql_query($sql_customer, $db_versivo);
-	$out_customer = mysql_fetch_array($res_customer);
+	$res_customer = mysqli_query($sql_customer, $db_versivo);
+	$out_customer = mysqli_fetch_array($res_customer);
 	$customer_id = $out_customer["customer_id"];
 	$customer_name = $out_customer["customer_name"];
 	$customer_label = $out_customer["customer_label"];

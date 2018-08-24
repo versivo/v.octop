@@ -12,8 +12,8 @@ $dbuser_nedi = '';
 $dbpass_nedi = '';
 
 /* DB */
-$db_versivo = mysql_connect($dbhost_versivo, $dbuser_versivo, $dbpass_versivo);
-$db_nedi = mysql_connect($dbhost_nedi, $dbuser_nedi, $dbpass_nedi);
+$db_versivo = mysqli_connect($dbhost_versivo, $dbuser_versivo, $dbpass_versivo);
+$db_nedi = mysqli_connect($dbhost_nedi, $dbuser_nedi, $dbpass_nedi);
 
 /* session manager */
 session_start();
@@ -97,11 +97,11 @@ function audit($user_id, $tenant_id, $username, $action, $time, $y_alert, $r_ale
 	if ($tenant_id == null) { $tenant_id = 0; }
 	if ($username == null) { $username = 'anonymous'; }
 
-	mysql_select_db('pl_main', $conn);
+	mysqli_select_db('pl_main', $conn);
 	$sql_audit = "INSERT INTO `audit`
 		(`user_id`, `tenant_id`, `username`, `action`, `time`, `y_alert`, `r_alert`, `ip`, `page`, `msg`) VALUES
 		('$user_id', '$tenant_id', '$username', '$action', '$time', '$y_alert', '$r_alert', '$ip', '$page', '$msg')";
-	$res_audit = mysql_query($sql_audit, $conn);
+	$res_audit = mysqli_query($sql_audit, $conn);
 }
 
 function loginForm()
