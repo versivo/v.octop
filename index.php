@@ -9,7 +9,7 @@ $username = $_SESSION["username"];
 if(isset($_SESSION["username"]))
 {
 	// get user info
-	mysqli_select_db('v.octop', $db_versivo);
+	mysqli_select_db('versivo_octop', $db_versivo);
 	$sql_user = "SELECT * FROM `users` WHERE `username` = '".$username."' ORDER BY `id`";
 	$res_user = mysqli_query($sql_user, $db_versivo);
 	$out_user = mysqli_fetch_array($res_user);
@@ -18,7 +18,7 @@ if(isset($_SESSION["username"]))
 	$customer_id = $out_user["customer"];
 
 	// get customer info
-	mysqli_select_db('v.octop', $db_versivo);
+	mysqli_select_db('versivo_octop', $db_versivo);
 	$sql_customer = "SELECT * FROM `customers` WHERE `id` = '".$customer_id."' ORDER BY `id`";
 	$res_customer = mysqli_query($sql_customer, $db_versivo);
 	$out_customer = mysqli_fetch_array($res_customer);

@@ -14,7 +14,7 @@ if ( isset($_POST['username']) && isset($_POST['password']) )
 	
 	mysqli_select_db('versivo_octop', $db_versivo);
 	$sql_user = "SELECT * FROM `users` WHERE `username` = '".$username."' ORDER BY `id`";
-	if (!$res_user = mysqli_query($sql_user, $conn))
+	if (!$res_user = mysqli_query($sql_user, $db_versivo))
 	{
 		$content .= "Query error.\n"; // echo "$res<br />\n";
 		$content .= "<!-- $sql_user -->\n";
