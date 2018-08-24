@@ -4,6 +4,12 @@
 error_reporting(E_ERROR | E_PARSE);
 
 /* STATIC VAR */
+$dbhost_versivo = '';
+$dbuser_versivo = '';
+$dbpass_versivo = '';
+$dbhost_nedi = '';
+$dbuser_nedi = '';
+$dbpass_nedi = '';
 
 /* DB */
 $db_versivo = mysql_connect($dbhost_versivo, $dbuser_versivo, $dbpass_versivo);
