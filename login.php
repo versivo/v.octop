@@ -12,9 +12,9 @@ if ( isset($_POST['username']) && isset($_POST['password']) )
 	$password = addslashes(stripslashes($_POST['password']));
 	$password = md5($password);
 	
-	mysqli_select_db('versivo_octop', $db_versivo);
+	mysqli_select_db($db_versivo, 'versivo_octop');
 	$sql_user = "SELECT * FROM `users` WHERE `username` = '".$username."' ORDER BY `id`";
-	if (!$res_user = mysqli_query($sql_user, $db_versivo))
+	if (!$res_user = mysqli_query($db_versivo, $sql_user))
 	{
 		$content .= "Query error.\n"; // echo "$res<br />\n";
 		$content .= "<!-- $sql_user -->\n";
