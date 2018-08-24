@@ -30,12 +30,12 @@ if(isset($_SESSION["username"]))
 	echo "<div style=\"width: 100%; margin: 5px;\"><h1>$customer_label :: Dashboard</h1></div>\n";
 
 	// box-left-begin
-	echo "<div style=\"width: 45%; float: left; margin: 5px;\">\n";
+	echo "<div style=\"width: 100%; float: left; margin: 5px;\">\n";
 	
 		// pos01
 		echo "<div id=\"pos01\" style=\"width: 100%; height: 300px; float: left; border: 1px dashed black; margin: 5px; padding: 5px;\"></div>\n";
 		// pos02
-		echo "<div id=\"pos02\" style=\"width: 100%; float: left; border: 1px dashed black; margin: 5px; padding: 5px;\"></div>\n";
+		// echo "<div id=\"pos02\" style=\"width: 100%; float: left; border: 1px dashed black; margin: 5px; padding: 5px;\"></div>\n";
 
 	echo "</div>\n";
 	// box-left-end
