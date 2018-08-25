@@ -4,6 +4,7 @@
 error_reporting(E_ERROR | E_PARSE);
 
 /* STATIC VAR */
+$token_import = '';
 $dbhost_versivo = '';
 $dbuser_versivo = '';
 $dbpass_versivo = '';
